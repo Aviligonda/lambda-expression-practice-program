@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class NumberPlayList {
     public static void main(String[] args) {
@@ -40,6 +41,11 @@ public class NumberPlayList {
         Consumer<Integer> listAction = n -> {
             System.out.println("Lambda Foreach explicit is :" + n);
         };
+        // input is integer value outPut is Double value
         list.forEach(listAction);
+        Function<Integer,Double> toDoubleFunction=Integer::doubleValue;
+        list.forEach(
+                n-> System.out.println("Lambda forEach double value is :"+toDoubleFunction.apply(n))
+        );
     }
 }
