@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class NumberPlayList {
     public static void main(String[] args) {
@@ -43,9 +44,14 @@ public class NumberPlayList {
         };
         // input is integer value outPut is Double value
         list.forEach(listAction);
-        Function<Integer,Double> toDoubleFunction=Integer::doubleValue;
+        Function<Integer, Double> toDoubleFunction = Integer::doubleValue;
         list.forEach(
-                n-> System.out.println("Lambda forEach double value is :"+toDoubleFunction.apply(n))
+                n -> System.out.println("Lambda forEach double value is :" + toDoubleFunction.apply(n))
+        );
+        // Print only Even Numbers
+        Predicate<Integer> even = n -> n > 0 && n % 2 == 0;
+        list.forEach(
+                n -> System.out.println("For each value is :" + n + " check for even :" + even.test(n))
         );
     }
 }
