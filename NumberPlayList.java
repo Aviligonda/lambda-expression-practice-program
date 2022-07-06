@@ -71,18 +71,23 @@ public class NumberPlayList {
                 .orElse(null);
         System.out.println("first even number is :" + first);
         // find max of even number
-        Integer max=list.stream().filter(even).max((n1,n2)->n1-n2).orElse(null);
-        System.out.println("Maximum of even numbers is :"+max);
+        Integer max = list.stream().filter(even).max((n1, n2) -> n1 - n2).orElse(null);
+        System.out.println("Maximum of even numbers is :" + max);
         // find min of even number
-        Integer min=list.stream().filter(even).min((n1,n2)->n1-n2).orElse(null);
-        System.out.println("Maximum of even numbers is :"+min);
+        Integer min = list.stream().filter(even).min((n1, n2) -> n1 - n2).orElse(null);
+        System.out.println("Maximum of even numbers is :" + min);
         //sum of integers value is
-        Integer sum =list.stream()
-                .reduce(0,Integer::sum);
-        long count =list.stream().count();
+        Integer sum = list.stream()
+                .reduce(0, Integer::sum);
+        long count = list.stream().count();
         System.out.println(count);
-        System.out.println("Sum of the integers is :"+sum);
-        System.out.println("Avg of the integer values is :"+sum/count);
+        System.out.println("Sum of the integers is :" + sum);
+        System.out.println("Avg of the integer values is :" + sum / count);
+        //finding matches
+        boolean allEven = list.stream().allMatch(even);
+        boolean oneEven = list.stream().anyMatch(even);
+        boolean noneMultiple = list.stream().noneMatch(i -> i > 0 && i % 5 == 0);
+        System.out.println("All even numbers :" + allEven + "\nOne even :" + oneEven + "\nNone of the :" + noneMultiple);
     }
 
 }
