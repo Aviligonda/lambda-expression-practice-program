@@ -63,6 +63,12 @@ public class NumberPlayList {
         // filter the data (greater than of 2 )print the integers
         List<Integer> integerList = list.stream().filter(n -> n > 2).toList();
         System.out.println("Filter the data :" + integerList);
+        Integer first = list.stream()
+                .filter(even)
+                .peek(n -> System.out.println("peek value is :" + n))
+                .findFirst()
+                .orElse(null);
+        System.out.println("first even number is :" + first);
     }
 
 }
