@@ -42,8 +42,8 @@ public class NumberPlayList {
         Consumer<Integer> listAction = n -> {
             System.out.println("Lambda Foreach explicit is :" + n);
         };
-        // input is integer value outPut is Double value
         list.forEach(listAction);
+        // input is integer value outPut is Double value
         Function<Integer, Double> toDoubleFunction = Integer::doubleValue;
         list.forEach(
                 n -> System.out.println("Lambda forEach double value is :" + toDoubleFunction.apply(n))
@@ -53,5 +53,11 @@ public class NumberPlayList {
         list.forEach(
                 n -> System.out.println("For each value is :" + n + " check for even :" + even.test(n))
         );
+        // using stream.forEach loop
+        list.stream().forEach(
+                n-> System.out.println("Stream forEach value is :"+n)
+        );
+
+
     }
 }
