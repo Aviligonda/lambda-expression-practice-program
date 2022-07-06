@@ -76,6 +76,13 @@ public class NumberPlayList {
         // find min of even number
         Integer min=list.stream().filter(even).min((n1,n2)->n1-n2).orElse(null);
         System.out.println("Maximum of even numbers is :"+min);
+        //sum of integers value is
+        Integer sum =list.stream()
+                .reduce(0,Integer::sum);
+        long count =list.stream().count();
+        System.out.println(count);
+        System.out.println("Sum of the integers is :"+sum);
+        System.out.println("Avg of the integer values is :"+sum/count);
     }
 
 }
