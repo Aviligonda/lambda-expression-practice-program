@@ -55,9 +55,14 @@ public class NumberPlayList {
         );
         // using stream.forEach loop
         list.stream().forEach(
-                n-> System.out.println("Stream forEach value is :"+n)
+                n -> System.out.println("Stream forEach value is :" + n)
         );
-
-
+        // store the double value using stream.map
+        List<Double> doubleList = list.stream()
+                .map(toDoubleFunction).toList();
+        System.out.println("Stream double list is :" + doubleList);
     }
+
+
 }
+
