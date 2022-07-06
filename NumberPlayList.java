@@ -58,11 +58,12 @@ public class NumberPlayList {
                 n -> System.out.println("Stream forEach value is :" + n)
         );
         // store the double value using stream.map
-        List<Double> doubleList = list.stream()
-                .map(toDoubleFunction).toList();
+        List<Double> doubleList = list.stream().map(toDoubleFunction).toList();
         System.out.println("Stream double list is :" + doubleList);
+        // filter the data (greater than of 2 )print the integers
+        List<Integer> integerList = list.stream().filter(n -> n > 2).toList();
+        System.out.println("Filter the data :" + integerList);
     }
-
 
 }
 
